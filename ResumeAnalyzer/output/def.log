@@ -1,0 +1,20 @@
+Sequence file is:
+dicttok
+NOHASH rule: _email [] [] <- _xWILD [1,0 matches=(_xALPHA _xNUM _ . -)] [] @ [1,1] [] _xALPHA [1,1] [] . [1,1] [] _xWILD [1,0 matches=(_xALPHA _xNUM _ . -)] [] @@
+NOHASH rule: _xnin [] [] <-4- ( [0,1] [] _xWILD [0,1 matches=(91 - +)] [] ) [0,1] [] _xNUM [1,1 trigger] [] @@
+NOHASH rule: _LINE [] [] <- _xWILD [0,0 fails=( 
+)] [] _xWILD [1,1 matches=(
+ _xEND)] [] @@
+NOHASH rule: _bullet [] [] <- _xSTART [1,1] [] _xWILD [1,1 pre matches=(_xCTRL _xPUNCT) fails=(()] [] @@
+NOHASH rule: _xNIL [] [] <- _xWHITE [1,1 singlet] [] @@
+NOHASH rule: _xNIL [] [] <- _xALPHA [1,1] [] @@
+NOHASH rule: _name [] [] <- _xSTART [1,1] [] _LINE [1,1] [] @@
+NOHASH rule: _headerZone [] [] <- _xSTART [1,1] [] _xWILD [0,0 fails=(_header)] [] _header [1,1] [] @@
+NOHASH rule: _xNIL [] [] <- _xALPHA [1,1 pre] [] @@
+NOHASH rule: _xNIL [] [] <- _xALPHA [1,1 pre] [] @@
+NOHASH rule: _xNIL [] [] <- _xALPHA [1,1 pre] [] @@
+NOHASH rule: _xNIL [] [] <- _xALPHA [1,1 pre] [] @@
+NOHASH rule: _xNIL [] [] <- _xALPHA [1,1 pre] [] @@
+
+Passes: (dicttok,nil) (nlp,email) (nlp,pno2) (nlp,linkedin) (nlp,github) (nlp,KBFuncs) (nlp,init) (nlp,Lines) (nlp,bullets) (nlp,RemoveWhiteSpace) (nlp,wordTypes) (nlp,sentEnd) (rec,prose) (nlp,headers) (nlp,pname) (nlp,info) (nlp,proseOut) (nlp,headerZone) (nlp,zones) (nlp,zoneTypes) (nlp,languages) (nlp,tools) (nlp,skills) (nlp,env) (nlp,cert) (nlp,output) 
+
