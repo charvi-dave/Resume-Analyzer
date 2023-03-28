@@ -1,0 +1,23 @@
+###############################################
+# FILE: github
+# SUBJ: comment
+# AUTH: Charvi Davr
+# CREATED: 2023-2-10 13:1:22
+# MODIFIED:
+###############################################
+
+@NODES _ROOT
+
+@POST
+"Resume Output.txt"<<"Github: "<<N("$text")<<"\n";
+single();
+
+
+@RULES
+_xgh <-
+	github										### (1)
+	\.											### (2)
+	com											### (3)
+	\/											### (4)
+	_xWILD [plus match=(_xALPHA _xNUM \_ \. \-)]	### (5)
+	@@

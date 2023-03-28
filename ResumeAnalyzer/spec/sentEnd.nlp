@@ -1,0 +1,19 @@
+###############################################
+# FILE: sentEnd
+# SUBJ: comment
+# AUTH: Charvi Davr
+# CREATED: 2023-2-21 18:54:34
+# MODIFIED:
+###############################################
+
+@NODES _LINE
+
+@POST
+X("sentence end",2) = 1;
+
+
+@RULES
+_xNIL <-
+	\.		### (1)
+	_xEND	### (2)
+	@@

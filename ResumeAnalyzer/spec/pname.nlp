@@ -1,0 +1,22 @@
+###############################################
+# FILE: pname
+# SUBJ: comment
+# AUTH: Charvi Davr
+# CREATED: 2023-2-22 13:51:36
+# MODIFIED:
+###############################################
+
+
+@NODES _ROOT
+
+@POST
+L("info")= getconcept(G("resume"),"info");
+addstrval(L("info"),"name",N("$text",2));
+singler(2,2);
+
+
+@RULES
+_name <-
+	_xSTART	### (1)
+	_LINE	### (2)
+	@@

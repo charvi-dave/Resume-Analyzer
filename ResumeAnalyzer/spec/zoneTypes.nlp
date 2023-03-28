@@ -1,0 +1,56 @@
+###############################################
+# FILE: zoneTypes
+# SUBJ: comment
+# AUTH: Charvi Davr
+# CREATED: 2023-2-21 20:14:47
+# MODIFIED:
+###############################################
+
+@NODES _ROOT
+
+@POST
+if (N("header")=="education"){
+	pnrename(N(1),"_education");
+}
+else if (N("header")=="languages"){
+	pnrename(N(1),"_languages");
+}
+else if (N("header")=="skills"){
+	pnrename(N(1),"_skills");
+}
+else if (N("header")=="work experience"){
+	pnrename(N(1),"_experience");
+}
+else if (N("header")=="tools"){
+	pnrename(N(1),"_tools");
+}
+else if (N("header")=="environment"){
+	pnrename(N(1),"_environment");
+}
+else if (N("header")=="objective"){
+	pnrename(N(1),"_objective");
+}
+else if (N("header")=="certifications"){
+	pnrename(N(1),"_certifications");
+}
+else if (N("header")=="projects"){
+	pnrename(N(1),"_projects");
+}
+else if (N("header")=="summary"){
+	pnrename(N(1),"_summary");
+}
+else if (N("header")=="awards"){
+	pnrename(N(1),"_awards");
+}
+else if (N("header")=="certificates"){
+	pnrename(N(1),"_certificates");
+}
+else if (N("header")=="achievements"){
+	pnrename(N(1),"_achievements");
+}
+
+
+@RULES
+_xNIL <-
+	_headerZone	### (1)
+	@@

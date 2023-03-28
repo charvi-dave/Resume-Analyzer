@@ -1,0 +1,52 @@
+###############################################
+# FILE: prose
+# SUBJ: comment
+# AUTH: David de Hilster
+# CREATED: 2023-2-3 9:56:55
+# MODIFIED:
+###############################################
+
+@NODES _ROOT
+
+@PRE
+	<2,2> vargt("prose",2);
+@POST
+	listadd(1,2,"false");
+@RULES
+_xNIL <-
+	_prose
+	_LINE
+	@@
+
+@PRE
+	<2,2> var("prose");
+	<2,2> var("sentence end");
+@POST
+	listadd(1,2,"false");
+@RULES
+_xNIL <-
+	_prose
+	_LINE
+	@@
+
+@PRE
+	<1,1> vargt("prose",2);
+	<2,2> vargt("prose",2);
+@RULES
+_prose <-
+	_LINE
+	_LINE
+	@@
+
+
+@PRE
+	<1,1> vargt("prose",2);
+	<2,2> var("prose");
+	<2,2> var("sentence end");
+@RULES
+_prose <-
+	_LINE
+	_LINE
+	@@
+
+

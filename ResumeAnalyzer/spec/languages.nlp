@@ -1,0 +1,21 @@
+###############################################
+# FILE: languages
+# SUBJ: must follow ZoneTypes
+# AUTH: Charvi Davr
+# CREATED: 2023-2-21 20:23:47
+# MODIFIED:
+###############################################
+
+@PATH _ROOT _languages _LINE
+
+@PRE
+<1,1> vareq("language","computer");
+
+@POST
+L("con")=getconcept(X("con",2),N("$text",1));
+addstrval(L("con"),"language","computer");
+
+@RULES
+_xNIL <-
+	_xALPHA	### (1)
+	@@

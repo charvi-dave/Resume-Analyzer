@@ -1,0 +1,28 @@
+###############################################
+# FILE: pno2
+# SUBJ: comment
+# AUTH: Charvi Davr
+# CREATED: 2023-2-13 11:25:36
+# MODIFIED:
+###############################################
+
+@NODES _ROOT
+
+@POST
+S("lenn")=strlength(N("$text",4));
+if ((S("lenn"))==12){
+	"Resume Output.txt"<<"Phone Number: "<<strpiece((N("$text",4)), 2,13)<<"\n";
+	single();
+}
+else if ((S("lenn"))==10){
+	"Resume Output.txt"<<"Phone Number: "<<N("$text",4)<<"\n";
+	single();
+}
+
+@RULES
+_xnin <-
+	\( [optional]				### (1)
+	_xWILD [optional match=( 91 \- \+)] ### (2)
+	\)	[optional]						### (3)
+	_xNUM			[trig]			### (4)
+	@@

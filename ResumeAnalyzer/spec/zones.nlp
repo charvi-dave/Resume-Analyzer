@@ -1,0 +1,18 @@
+###############################################
+# FILE: zones
+# SUBJ: comment
+# AUTH: Charvi Davr
+# CREATED: 2023-2-8 23:5:16
+# MODIFIED:
+###############################################
+
+@NODES _ROOT
+
+@POST
+N("con") = getconcept(G("resume"),N("header",1));
+"Resume Sections.txt"<<"ZONES :"<<N("$text",1)<<"\n";
+
+@RULES
+_xNIL <-
+	_headerZone	### (1)
+	@@
